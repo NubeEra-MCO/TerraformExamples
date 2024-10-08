@@ -1,5 +1,6 @@
 # pip install scikit-learn --break-system-packages --no-warn-script-location
 # pip install pandas --break-system-packages --no-warn-script-location
+# python3 01.load-data.py
 ##########################Loading Data to DataFrame ###################
 from sklearn.datasets import load_iris
 import pandas as pd
@@ -14,14 +15,14 @@ df['target'] = iris.target
 # Preview the dataset
 print( df.head() )
 ###########################Split Data into CSVs(Train, Test) #######################################
-# from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split
 
-# # Split the data
-# train_data, test_data = train_test_split(df, test_size=0.2, random_state=42)
+# Split the data
+train_data, test_data = train_test_split(df, test_size=0.2, random_state=42)
 
-# # Save the train and test data as CSV files
-# train_data.to_csv('train.csv', index=False)
-# test_data.to_csv('test.csv', index=False)
+# Save the train and test data as CSV files
+train_data.to_csv('train.csv', index=False)
+test_data.to_csv('test.csv', index=False)
 
 ####################Uploading to S3 Bucket######################################################
 # import boto3
