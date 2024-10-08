@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+from ALoadData import df
 from sklearn.model_selection import train_test_split
 
 # Split the data

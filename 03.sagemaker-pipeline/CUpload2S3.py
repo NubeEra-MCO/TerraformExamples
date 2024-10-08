@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ####################Uploading to S3 Bucket######################################################
 import boto3
 

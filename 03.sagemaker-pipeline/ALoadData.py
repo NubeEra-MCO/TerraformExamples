@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # pip install scikit-learn --break-system-packages --no-warn-script-location
 # pip install pandas --break-system-packages --no-warn-script-location
 # pip install boto3 --break-system-packages --no-warn-script-location
