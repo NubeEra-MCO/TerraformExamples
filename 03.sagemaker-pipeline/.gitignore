@@ -1,0 +1,36 @@
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# Temporary files
+*.tfvars
+*.tfvars.json
+.terraform/
+
+# Ignore plan files
+*.tfplan
+
+# Ignore local .terraform directory
+.terraform/
+
+# Ignore IDE-specific files
+*.iml
+.idea/
+.vscode/
+
+# Ignore Terraform variable files with sensitive information
+*.tfvars
+
+# Ignore AWS credentials
+.aws/
+
+
+.terraform.lock.hcl
+
+.env
+
+.env*
+.env/*

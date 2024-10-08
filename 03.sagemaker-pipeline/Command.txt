@@ -6,3 +6,6 @@ alias tfa="terraform apply"
 EOF
 
 source ~/.bashrc
+
+chmod +x load_env.sh
+source load_env.sh
