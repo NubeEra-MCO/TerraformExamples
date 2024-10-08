@@ -17,8 +17,10 @@ xgboost_estimator = XGBoost(
     instance_type='ml.m5.xlarge',
     instance_count=1,
     role=role,
-    hyperparameters={'max_depth': 5, 'eta': 0.2, 'objective': 'binary:logistic', 'num_round': 100},
-    sagemaker_session=sagemaker_session
+    hyperparameters={'max_depth': 5, 'model_dir':'./model'},
+    # hyperparameters={'max_depth': 5, 'eta': 0.2, 'objective': 'binary:logistic', 'num_round': 100},
+    sagemaker_session=sagemaker_session,
+    dependencies=['requirements.txt']  # Add this line to include dependencies    
 )
 
 # Start training

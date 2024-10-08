@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 
+import subprocess
+import sys
+
+# Install required packages
+subprocess.check_call([sys.executable, "-m", "pip", "install", "scikit-learn", "pandas"])
+
+
+
 # train.py
 import argparse
 import os
