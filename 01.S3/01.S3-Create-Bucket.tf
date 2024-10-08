@@ -11,13 +11,11 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"  # Change to your preferred region
-  access_key = "YOUR_ACCESS_KEY"    # Replace with your access key
-  secret_key = "YOUR_SECRET_KEY"    # Replace with your secret key
+  region = "ap-northeast-1"  # Change to your preferred region  
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "my-unique-bucket-name"  # Must be globally unique
+  bucket = lower("bkt-syed-${replace(replace(timestamp(), ":", "-"), "T", "-")}")  # Must be globally unique
   acl    = "private"
 
   tags = {
