@@ -25,15 +25,19 @@ train_data, test_data = train_test_split(df, test_size=0.2, random_state=42)
 train_data.to_csv('train.csv', index=False)
 test_data.to_csv('test.csv', index=False)
 
-####################Uploading to S3 Bucket######################################################
-import boto3
 
-# Initialize S3 client
-s3 = boto3.client('s3')
 
-# Upload data to S3
-bucket_name = 'bkt-syed-2024-10-08-06-15-56z'
-s3.upload_file('train.csv', bucket_name, 'data/train.csv')
-s3.upload_file('test.csv', bucket_name, 'data/test.csv')
 
-#  aws s3 ls s3://bkt-syed-2024-10-08-06-15-56z/data/
+import sagemaker
+from sagemaker.amazon.common import write_numpy_to_dense_tensor
+import numpy as np
+
+# Write to RecordIO format
+train_file = 'train.recordio'
+with open(train_file, 'wb') as f:
+    write_numpy_to_dense_tensor(f, np.array(train_data.drop(columns=['target'])), np.array(train_data['target']))
+
+# Upload the RecordIO file to S3
+s3.upload_file(train_file, bucket_name, 'data/train.recordio')
+
+# aws s3 ls s3://bkt-syed-2024-10-08-06-15-56z/data/train.csv
