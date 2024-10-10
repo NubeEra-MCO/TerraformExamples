@@ -31,5 +31,5 @@ jobs:
       - name: Verify AWS CLI Installation
         run: aws --version
       
-      - name: Verify AWS S3 Bucket Listing
+      - name: AWS S3 Bucket Listing
         run: aws s3 ls
