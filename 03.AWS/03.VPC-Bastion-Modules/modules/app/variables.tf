@@ -1,0 +1,11 @@
+variable "vpc_id" {}
+variable "public_subnets" {}
+variable "private_subnets" {}
+variable "availability_zones" {}
+variable "ami" {}
+variable "instance_type" {}
+variable "key_name" {}
+variable "min_size" {}
+variable "max_size" {}
+variable "internet_gateway" {}
+variable "route_table_id" {}
